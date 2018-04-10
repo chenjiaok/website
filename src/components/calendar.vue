@@ -228,7 +228,7 @@ export default {
 			width: 400px;
 			height: 430px;
 			margin: 0 auto;
-			font-family: "微软雅黑";
+      font-family: '微软雅黑';
 			font-size: 18px;
 		}
 		.header{

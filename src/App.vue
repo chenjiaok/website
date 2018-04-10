@@ -14,7 +14,7 @@ export default {
 
 <style>
 #app {
-  font-family: '微软雅黑', Helvetica, Arial, sans-serif;
+  font-family: '微软雅黑', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 20px;
