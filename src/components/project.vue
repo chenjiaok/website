@@ -1,74 +1,28 @@
 <template>
   <div class="project">
-    <div class="jumbotron">
-      <h1>项目展示</h1>
-    </div>
-    <div class="row">
-      <div class="col-sm-7 col-md-7">
-        <div class="thumbnail">
+    <h2>案例展示</h2>
+    <div class="row" >
+      <div class="col-lg-6" v-for="item in projects">
+        <div class="thumbnail" v-for="project in item">
+          <h3 class="project-title">{{project.title}}</h3>
+          <img v-bind:src=project.src alt="">
           <div class="caption">
-            <h3>简易在线物料管理系统</h3>
-            <p>一个简易的物料管理系统，添加物料，供应商信息，对物料进行出入库操作，显示当前库存、出入库信息、物料信息</p>
-            <p>页面：所有物料、新增物料、查询物料、更改物料、物料库存、入库、出库、入库记录、出库记录</p>
-            <p>使用技能：bootstrap、 vue、jquery、 mysql、node、express、vue-router </p>
-            <p>后续可增加文件上传物料信息、出入库信息以及产品BOM，以及根据生产计划安排</p>
-            <p><a href="http://47.100.46.120:8090/var/www/omma" class="btn btn-primary" role="button">打开\测试</a> </p>
+            
+            <p class="text-left">{{project.content}}</p>
+            <p class="text-left">{{project.description}}</p>
+            <ul class=""><li class="label label-info kill" v-for="kill in project.kill">{{ kill}}</li></ul>
+            <p class="text-center"><a v-bind:href=project.site class="btn btn-lg btn-info" role="button"> 打 开 预 览 </a></p>
           </div>
         </div>
       </div>
-      <div class="col-sm-5 col-md-5">
-        <div class="thumbnail">
-          <img v-bind:src="imgUrl1">
-        </div>
-      </div> 
-    </div>    
-    <div class="row">
-      <div class="col-sm-7 col-md-7">
-        <div class="thumbnail">
-          <div class="caption">
-            <h3>淘宝</h3>
-            <p>模拟淘宝网首页</p>
-            <p>1:1 按照淘宝网</p>
-            <p>使用技能：bootstrap、jquery、 hover </p>
-            <p></p>
-            <p><a href="http://47.100.46.120:8090/var/www/omma" class="btn btn-primary" role="button">打开\测试</a> </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-5 col-md-5">
-        <div class="thumbnail">
-          <img v-bind:src="imgUrl2">
-        </div>
-      </div> 
-    </div>
-    <div class="row">
-      <div class="col-sm-7 col-md-7">
-        <div class="thumbnail">
-          <div class="caption">
-            <h3>小米</h3>
-            <p>模拟小米</p>
-            <p>1:1 按照小米</p>
-            <p>使用技能：bootstrap、jquery、 hover </p>
-            <p><a href="http://47.100.46.120:8090/var/www/omma" class="btn btn-primary" role="button">打开\测试</a> </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-5 col-md-5">
-        <div class="thumbnail">
-          <img v-bind:src="imgUrl3">
-        </div>
-      </div> 
-    </div>  
-        
-
+    </div>   
   </div>
 </template>
 <script>
 import omma from './../assets/omma.jpg'
 import taobao from './../assets/taobao.jpg'
 import xiaomi from './../assets/xiaomi.jpg'
-
-
+import calc from './../assets/calc.jpg'
 
 
 export default {
@@ -78,6 +32,51 @@ export default {
       imgUrl1: omma,
       imgUrl2: taobao,
       imgUrl3: xiaomi,
+      imgUrl4: calc,
+      projects:{
+          resum:[{
+          title:"个人网页",
+          content:"简易的个人网页",
+          description:"单页面应用：由日历、时间、个人介绍、技能、项目、履历等组件构成",
+          kill:['jquery','bootstrap','node','webpack','vue','canvas','vue-router'],
+          src:omma,
+          site:""
+        }],
+        materialStocks:[{
+          title:"在线物料管理系统",
+          content:"方便 可用于替代ERP、SAP系统",
+          description:"单页面应用：物料增删改查、库存操作，拟增加BOM、生产、采购组件",
+          kill:['jquery','bootstrap','node','webpack','vue','mysql','vue-router'],
+          src:omma,
+          site:"http://47.100.46.120:8090/var/www/omma"
+        }],
+        taobaos:[{
+          title:"淘宝网",
+          content:"",
+          description:"模拟淘宝首页部分内容",
+          kill:['jquery','bootstrap'],
+          src:taobao,
+          site:"http://www.chenjiaok.top/taobao/taobao.html"
+        }],        
+        xiaomis:[{
+          title:"小米商城",
+          content:"",
+          description:"模仿小米商城首页内容",
+          kill:['jquery','bootstrap'],
+          src:xiaomi,
+          site:"http://www.chenjiaok.top/mi/mi.html"
+        }],
+
+        calcs:[{
+          title:"网页计算器",
+          content:"模拟Window自带计算器的标准模式",
+          description:"优化JS计算缺陷，增加友情提醒",
+          kill:['jquery','原生JS'],
+          src:calc,
+          site:"http://www.chenjiaok.top/calc/calc.html"
+        }],       
+      },
+
 		}
 	},
   created() {
@@ -86,13 +85,27 @@ export default {
 }
 </script>
 <style>
-img{
-  height: 250px; 
-  width: 100%; 
-  display: block;
-  margin: 5px auto;
+
+.project-title{
+  line-height: 40px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #5bc0de;
 }
-.thumbnail{
-  height: 400px;
+ul{
+  padding: 0;
+}
+.killdiv{
+  width: 100%;
+  
+}
+
+.kill{
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.caption{
+  font-size: 16px;
 }
 </style>
