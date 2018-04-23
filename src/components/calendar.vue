@@ -212,8 +212,6 @@ export default {
     showT:function() {
       this.renderTbale()	
     },
-    
-    
   },
 }
 /*
