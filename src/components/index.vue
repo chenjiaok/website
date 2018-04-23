@@ -1,16 +1,12 @@
 <template>
-
   <div class="index">
-    
-    <my-left v-show="local"></my-left>   
-    <my-right></my-right>    
+    <div id="side" class="datetime" v-show="hidden">
+      <my-left></my-left>
+    </div>
+    <div id="content" class="autocenter center">
+      <my-right></my-right> 
+    </div>  
   </div>
-
-
-
-
-
-
 </template>
 
 <script>
@@ -20,12 +16,11 @@ import MyRight from '@/components/right'
 export default {
   data (){
     return {
-      local: true,
+      hidden: '',
       screen: document.body.clientWidth
     }
   },
   components: {
-
     MyLeft,
     MyRight
   },
@@ -33,35 +28,83 @@ export default {
     const that = this
     window.onresize = function() {
       that.screen = document.body.clientWidth 
-   
+      if( that.screen >= 1000){
+        that.hidden = true
+        $('#side').addClass('datetime') 
+        $('#content').removeClass('autocenter') 
+        $('#content').addClass('center') 
+         
+      }else if( that.screen  < 1000){
+        that.hidden = false
+        $('#side').removeClass('datetime')
+        $('#content').removeClass('center') 
+        $('#content').addClass('autocenter') 
+      } 
     };
-
   },
-  watch: {
-    screen (val){
-      if( val > 970){
-        $('.index').addClass('col-xd')
-        this.local = true
-      }else if( val  < 970){
-        $('.index').removeClass('col-xd')
-        this.local = false
-      }       
-    }
-  }
+  created (){
+    const that = this
+    that.screen = document.body.clientWidth 
+      if( that.screen >= 1000){
+        that.hidden = true
+        $('#side').addClass('datetime')
+        $('#content').removeClass('autocenter') 
+        $('#content').addClass('center') 
+      }else if( that.screen  < 1000){
+        that.hidden = false
+        $('#side').removeClass('datetime')
+        $('#content').removeClass('center') 
+        $('#content').addClass('autocenter') 
+      }
+  },  
 }
-   
 </script>
 
 <style>
-.index{
-    position: relative;
-  /*  width: 1100px;
-    height: 830px;*/
-    border: 2px solid #f0f;
+
+.datetime{ 
+  width: 430px;
 }
 
-.col-xd{
-  position: relative;
+.autocenter{
+  width: 90%;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  
 }
+
+@media (min-width: 1000px){
+  .center{
+    position: absolute;
+    top: 30px;
+    left: 430px; 
+    width: 570px;
+       
+  }
+
+}
+
+@media (min-width: 1200px){
+
+  .center{
+    position: absolute;
+    top: 30px;
+    left:470px;
+    width: 700px;
+      
+  }
+}
+@media (min-width: 1500px){
+
+  .center{
+    position: absolute;
+    top: 30px;
+    left:470px;
+    width: 1000px;
+      
+  }
+}
+
 
 </style>

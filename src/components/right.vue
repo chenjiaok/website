@@ -1,12 +1,11 @@
 <template>
   <div class="information">
-    <my-info></my-info>   
+    <my-info></my-info> 
+    <my-kill></my-kill>   
     <my-project></my-project>  
-       
+    <my-record></my-record>   
       
   </div>
-
-
 
 </template>
 
@@ -14,6 +13,9 @@
 
 import MyInfo from '@/components/info'
 import MyProject from '@/components/project'
+import MyRecord from '@/components/record'
+import MyKill from '@/components/kill'
+
 export default {
   data (){
     return {
@@ -23,48 +25,19 @@ export default {
   components: {
 
     MyInfo,
-    MyProject
+    MyKill,
+    MyProject,
+    MyRecord,
   },
- /* mounted () {
-    const that = this
-    window.onresize = function() {
-      that.screen = document.body.clientWidth 
-   
-    };
-
-  },
-  watch: {
-    screen (val){
-      if( val > 970){
-        $(".information").removeClass('autocenter')
-        $(".information").addClass('floatleft')
-     
-      }else if( val  < 970){
-        $(".information").removeClass('floatleft')
-        $(".information").addClass('autocenter')
-         
-      }       
-    }
-  }*/
 }
 </script>
 
 <style>
 .information{
-    position: absolute;
-    top: 0;
-    left: 450px;
-  /*  border: 3px solid #f00; */
+  
+    border-left: 2px solid #f00;
     background-color: #eee;
 }
 
-.autocenter{
-  position: relative;
-  margin: 0 auto;
-}
-.floatleft{
-    position: absolute;
-    top: 0;
-    left: 450px;
-}
+
 </style>
