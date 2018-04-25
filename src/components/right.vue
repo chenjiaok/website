@@ -3,8 +3,7 @@
     <my-info></my-info> 
     <my-kill></my-kill>   
     <my-project></my-project>  
-    <my-record></my-record>   
-      
+    <my-record></my-record>        
   </div>
 
 </template>
@@ -14,7 +13,7 @@
 import MyInfo from '@/components/info'
 import MyProject from '@/components/project'
 import MyRecord from '@/components/record'
-import MyKill from '@/components/kill'
+import MyKill from '@/components/killtree'
 
 export default {
   data (){
@@ -23,7 +22,6 @@ export default {
     }
   },
   components: {
-
     MyInfo,
     MyKill,
     MyProject,
@@ -34,10 +32,7 @@ export default {
 
 <style>
 .information{
-  
-    border-left: 2px solid #f00;
-    background-color: #eee;
+    background-color: #fff;
 }
-
 
 </style>

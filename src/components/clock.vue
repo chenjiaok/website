@@ -27,18 +27,18 @@ export default {
 
 function drawClock(){
 	var canvas = document.getElementById('myCanvas');
-	
-	var ctx = canvas.getContext("2d");
-	var width = ctx.canvas.width;    
-	var height = ctx.canvas.height;    
+	if( canvas.getContext){
+    var ctx = canvas.getContext("2d");
+    var width = ctx.canvas.width;    
+    var height = ctx.canvas.height;    
 
-	var r = width / 2;
-	var rem = width / 300;   
+    var r = width / 2;
+    var rem = width / 300;   
 
-	var a = setInterval(draw, 1000);
+    var a = setInterval(draw, 1000);
 
-	draw();
-
+    draw();
+  }
 function draw(){
 
 	ctx.clearRect(0, 0, width, height);
@@ -161,7 +161,7 @@ function drawBox(){//外形
 .clock{
   width: 400px;
   height: 300px;
-  margin: 40px auto;
+  margin: 20px auto;
   
 }
 </style>

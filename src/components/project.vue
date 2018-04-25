@@ -10,7 +10,7 @@
             
             <p class="text-left">{{project.content}}</p>
             <p class="text-left">{{project.description}}</p>
-            <ul class=""><li class="label label-info kill" v-for="kill in project.kill">{{ kill}}</li></ul>
+            <ul class=""><li class="project-kill" v-for="kill in project.kill">{{ kill}}</li></ul>
             <p class="text-center"><a v-bind:href=project.site class="btn btn-lg btn-info" role="button"> 打 开 预 览 </a></p>
           </div>
         </div>
@@ -76,16 +76,11 @@ export default {
           site:"http://www.chenjiaok.top/calc/calc.html"
         }],       
       },
-
 		}
 	},
-  created() {
-
-  },
 }
 </script>
 <style>
-
 .project-title{
   line-height: 40px;
   font-weight: 600;
@@ -96,15 +91,23 @@ ul{
   padding: 0;
 }
 .killdiv{
-  width: 100%;
-  
+  width: 100%;  
 }
 
-.kill{
-  margin-right: 10px;
-  margin-bottom: 10px;
+.project-kill{
+  float: left;
+  list-style: none;
+  margin-right: 0.6em;
+  margin-bottom: 0.6em;  
+  padding: .2em .6em .3em;
+  border-radius: .25em;
+  font-size: 90%;
+  font-weight: 600;
+  color: #fff;
+  background-color: #5bc0de;
+  text-align: center;
+  vertical-align: baseline;  
 }
-
 .caption{
   font-size: 16px;
 }

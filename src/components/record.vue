@@ -3,12 +3,12 @@
 		<h2>工作经历</h2>
 		<div class="row" v-for="item in records">
 			<div class="recorddiv" v-for="record in item"> 
-				<div class="caption col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<div class="caption col-xs-7 col-sm-7 col-md-7 col-lg-7">
 					<p class="text-left">{{record.duty}}</p>
 					<p class="text-left">{{record.result}}</p>          
 				</div>
 
-				<div class="col-xs-6">
+				<div class="col-xs-5">
 					<h3 class="text-center">{{record.post}}</h3>
 					<h4 class="text-center">{{record.company}}</h4>
 					<h5 class="text-center">{{record.period}}</h5>						
@@ -31,7 +31,7 @@ export default {
 				company:"宁波麦博韦尔移动电话有限公司",
 				period:"2015/9-2016/12",
 				duty:"职责：核算在研和量产项目成本，根据项目进度安排物料到位",
-				result:"最多同时跟进3个智能机、4个功能机项目，除设计变更外，保证项目按时完成试产",
+				result:"同时最多跟进3个智能机、4个功能机项目，除设计变更外，保证项目按时完成试产",
 			}],
       upperPurchasing:[{
 				post:"上游采购工程师",
@@ -57,18 +57,16 @@ export default {
 			}
 		}
 	},
-  created() {
-
-  },
 }
 </script>
 <style scoped>
 .row{
 	margin: 15px 10px;
-	background-color: #fff;	
+	border: 1px solid #ddd;
+  border-radius: 4px;	
 }
 .recorddiv{
-	margin: 15px 10px;
+	padding: 10px 0;
 
 }
 

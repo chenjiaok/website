@@ -19,7 +19,6 @@ export default {
     }
   },
   components: {
-
     MyClock,
     MyCalendar
   }
@@ -28,9 +27,9 @@ export default {
 
 <style>
 .time{
-    
-    width: 430px;
-    height: 800px;
-    border-right: 2px solid #38f;
+  position:fixed;	
+  width: 430px;
+  height: 800px;
+	border-right: 3px solid #eee;
 }
 </style>

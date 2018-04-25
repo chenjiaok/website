@@ -103,7 +103,6 @@ export default {
         arr.push(now.getDate(1))
         now.setDate(now.getDate() + 1)
       }
-
       var now = new Date
       now.setFullYear(year)
       now.setMonth(month)
@@ -113,8 +112,7 @@ export default {
       for(var i = 0; i < ref; i++){
         arr.unshift('');
       }
-      var brr = new Array()
-      
+      var brr = new Array()      
       for(var i = 0; i < (arr.length) / 7; i++){
         brr[i] = new Array();
         for(var j = 0; j < 7; j++){
@@ -189,16 +187,13 @@ export default {
       this.week = now.getDay()
       $('#year').text(this.year + '年')	
       $('#month').text(this.month + '月')					
-      this.showMonthTbale(this.year,this.month-1)
-      now.setDate(1)		
-      this.firstDay = now.getDay()
-      
+      this.showMonthTbale(this.year,this.month-1)      
     },
     mouseover(){
       $('b').hover(function(){
         if(Number( $(this).text() ) > 0){
           $(this).css({
-            'border':'3px solid green',	
+            'border':'3px solid #5bc0de',	
           })	
         }
       },function(){
@@ -214,60 +209,57 @@ export default {
     },
   },
 }
-/*
-  
-*/
 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .calendar{
-			width: 400px;
-			height: 430px;
-			margin: 0 auto;
-      font-family: '微软雅黑';
-			font-size: 18px;
-		}
-		.header{
-			width: 360px;
-			height: 40px;
-			margin: 10px auto;				
-		}
-		.header .dropdown-menu{
-			width: 72px;
-			min-width: 72px;
-		}
-		.header ul li{
-			width: 71px;
-			line-height: 25px;
-			
-		}
-		.header ul li:hover{
-			cursor: pointer;
-			background-color: #fff;
-		}
-		.content{
-			width: 380px;
-			height: 310px;
-			margin: 0 auto;
-			border-top: 2px solid #2c7;
-		}
-		tbody tr{
-			border-bottom: 1px solid #ddd;
-		}
-		td{
-			cursor: pointer;
-		}
-		td>b{
-			padding: 5px;
-			font-weight: normal;
-			border: 3px solid #fff;
-		}
-		.todaycolor{
-			background-color: #f0f !important;
-		}
-    .datatime{
-      height:40px;
-    }
+	.calendar{
+		width: 400px;
+		height: 430px;
+		margin: 0 auto;
+		font-family: '微软雅黑';
+		font-size: 18px;
+	}
+	.header{
+		width: 360px;
+		height: 40px;
+		margin: 10px auto;				
+	}
+	.header .dropdown-menu{
+		width: 72px;
+		min-width: 72px;
+	}
+	.header ul li{
+		width: 71px;
+		line-height: 25px;
+		
+	}
+	.header ul li:hover{
+		cursor: pointer;
+		background-color: #fff;
+	}
+	.content{
+		width: 380px;
+		height: 310px;
+		margin: 0 auto;
+		border-top: 2px solid #2c7;
+	}
+	tbody tr{
+		border-bottom: 1px solid #ddd;
+	}
+	td{
+		cursor: pointer;
+	}
+	td>b{
+		padding: 5px;
+		font-weight: normal;
+		border: 3px solid #fff;
+	}
+	.todaycolor{
+		background-color: #f66 !important;
+	}
+	.datatime{
+		height:40px;
+	}
 </style>
