@@ -7,23 +7,23 @@ import index from '@/components/index'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      component: index,
-      children: [
-      {
-        path: 'right',
-        component: right
-      },
-      {
-        path: 'left',
-        component: left
-      }
+	routes: [
+		{
+			path: '/',
+			component: index,
+			children: [
+				{
+					path: 'right',
+					component: right
+				},
+				{
+					path: 'left',
+					component: left
+				}
 
-      ]  
-      
-    },
+			]  
+		
+		},
 
-  ]
+	]
 })

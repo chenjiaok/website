@@ -1,10 +1,10 @@
 <template>
-  <div class="information">
-    <my-info></my-info> 
-    <my-kill></my-kill>   
-    <my-project></my-project>  
-    <my-record></my-record>        
-  </div>
+	<div class="information">
+		<my-info></my-info> 
+		<my-kill></my-kill>   
+		<my-project></my-project>  
+		<my-record></my-record>        
+	</div>
 
 </template>
 
@@ -16,21 +16,26 @@ import MyRecord from '@/components/record'
 import MyKill from '@/components/killtree'
 
 export default {
-  data (){
-    return {
-      screen
-    }
-  },
-  components: {
-    MyInfo,
-    MyKill,
-    MyProject,
-    MyRecord,
-  },
+	data (){
+		return {
+			screen
+		}
+	},
+	components: {
+		MyInfo,
+		MyKill,
+		MyProject,
+		MyRecord,
+	},
 }
 </script>
 
 <style>
+h2{
+	margin: 30px auto;
+	padding: 5px 0;
+	background-color: #99ff99;
+}
 .information{
     background-color: #fff;
 }
